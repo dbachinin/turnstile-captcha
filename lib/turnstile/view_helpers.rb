@@ -21,7 +21,7 @@ module Turnstile::ViewHelpers
       data: {
         action: action,
         sitekey: Turnstile.configuration.site_key
-      }
+      }.compact
     }.deep_merge(options)
 
     content_tag :div, "", attrs

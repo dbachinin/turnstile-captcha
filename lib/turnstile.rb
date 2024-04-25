@@ -9,11 +9,13 @@ require "turnstile/verification"
 require "turnstile/railtie" if defined?(Rails)
 
 module Turnstile
-  def self.configuration
+  extend self
+
+  def configuration
     @configuration ||= Configuration.new
   end
 
-  def self.configure
+  def configure
     yield(configuration)
   end
 end
